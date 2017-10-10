@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<script>
+
+    function abc()
+    {
+
+        alert("Kaka")
+    }
+</script>
+<h2>Index</h2>
+@Ajax.ActionLink("ALL", "ALL", new AjaxOptions {
+
+    HttpMethod="Get",
+    InsertionMode=InsertionMode.Replace,
+    UpdateTargetId="A",
+    OnSuccess="abc()"
+
+})
+
+
+
+@Ajax.ActionLink("Top2", "Top2", new AjaxOptions
+{
+
+    HttpMethod = "Get",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "A"
+
+})
+
+
+<div id="A"></div>
